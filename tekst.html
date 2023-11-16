@@ -1,0 +1,83 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 3</title>
+</head>
+<body>
+    <canvas id="canvas" width="350" height="200"></canvas>
+    <p id="output"></p>
+    <script>
+        const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // funksjon for rektangel
+    rectangle = function(height, width, x, y, mode, color) {
+      ctx.fillStyle = color, mode;
+      ctx.fillRect(x, y, width, height);
+    }
+    //funksjon for sirkel
+    circle = function(radius, mode, color, x, y) {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2, true); // Outer circle
+      if (mode == "solid") {
+        ctx.fill();
+      } else {
+        ctx.stroke();
+      }
+    }
+
+    // Bakrunn 
+    rectangle(200, 350, 1, 1, "Solid", "rgb(71, 175, 236")
+    rectangle(70, 350, 1, 130, "Solid", "rgb(30, 95, 30)")
+    rectangle(40, 350, 1, 160, "Solid", "rgb(117, 118, 121)")
+
+    // Sol
+    circle(20,"solid","rgb(255,215,0)", 30, 30)
+    // Sky
+    circle(15,"solid","whitesmoke", 276, 30)
+    circle(15,"solid","whitesmoke", 276, 40)
+    circle(15,"solid","whitesmoke", 288, 40)
+    circle(14,"solid","whitesmoke", 265, 40)
+    //Yttre dekk 
+    circle(25,"solid","black", 260, 170)
+    circle(25,"solid","black", 140, 170)
+    //Indre dekk 
+    circle(10,"solid","whitesmoke", 260, 170)
+    circle(10,"solid","whitesmoke", 140, 170)
+
+    //Bil 
+    rectangle(40, 200, 99, 120, "Solid", "blue")
+    rectangle(30, 120, 140, 90, "Solid", "blue")
+   
+    </script>
+
+    <svg id="svg1" height="200" width="350">
+   
+    <rect width ="350" height="200" style="fill:rgb(71, 175, 236)" />
+    <rect x="1" y="130" width ="350" height="70" style="fill:rgb(30, 95, 30)" />
+    <rect x="1" y="160" width ="350" height="40" style="fill:rgb(117, 118, 121)" />
+    <circle cx="30" cy="30" r="20" style="fill:rgb(247, 213, 24)" />
+    <!-- Sky -->
+    <circle cx="288" cy="40" r="15" style="fill:whitesmoke" />
+    <circle cx="276" cy="40" r="15" style="fill:whitesmoke" />
+    <circle cx="265" cy="40" r="15" style="fill:whitesmoke" />
+    <circle cx="276" cy="30" r="15" style="fill:whitesmoke" />
+    <!-- Yttre dekk -->
+    <circle cx="260" cy="170" r="25" style="fill:black" />
+    <circle cx="140" cy="170" r="25" style="fill:black" />
+     <!-- Indre dekk -->
+    <circle cx="140" cy="170" r="10" style="fill:whitesmoke" />
+    <circle cx="260" cy="170" r="10" style="fill:whitesmoke" />
+    <!-- Selve bilen -->
+    <rect x="99" y="120" width ="200" height="40" style="fill:blue" />
+    <rect x="140" y="90" width ="120" height="30" style="fill:Blue" />
+
+  </svg> 
+
+</body>
+</html>
