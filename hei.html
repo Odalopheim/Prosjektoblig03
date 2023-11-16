@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg"></svg>
+    <script>
+        const svg = document.getElementById("svg");
+        svg.setAttribute("width", "350");
+        svg.setAttribute("height", "200");
+
+    function circle(radius, mode, color) {
+        console.log("tegn en sirkel");
+        const circle = document.createElementNS("http://www.w3.org/2000/svg","circle");
+      circle.setAttribute("cx",radius);
+        circle.setAttribute("cy",radius);
+        circle.setAttribute("r",radius);
+        if (mode == "outline") {
+            circle.setAttribute("stroke", color);
+        } else {
+            circle.setAttribute("fill",color);
+        }
+        
+        return circle;
+    }
+
+    function overlay_xy(ctx, dx, dy, circle) {
+        ctx.appendChild(circle)
+    }
+
+    svg.appendChild(circle(60, "solid", "red"));
+    svg.appendChild(circle(50, "solid", "blue"));
+    
+
+    </script>
+     <svg id="svg" width="200" height="200"></svg>
+
+     <script>
+ 
+     function rectangle(x, y, width, height, style) {
+         var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+         rect.setAttribute("x", x);
+         rect.setAttribute("y", y);
+         rect.setAttribute("width", width);
+         rect.setAttribute("height", height);
+         rect.setAttribute("style", style);
+ 
+         document.getElementById("svg").appendChild(rect);
+     }
+ 
+     rectangle("0", "0", "200", "200", "fill:black");
+     rectangle("50", "50", "100", "300", "fill:red");
+ 
+     rectangle("0", "0", "200", "20", "fill:blue");
+ 
+     </script>
+
+
+      
+   
+</body>
+</html>
